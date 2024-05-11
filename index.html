@@ -7,11 +7,14 @@
   <title>Document</title>
 </head>
 <body>
-  <button id="myButton" onclick="buttonClicked">Нажми меня</button>
+  <button id="myButton">Нажми меня</button>
   <script>
-    function buttonClicked() {
-      window.parent.postMessage({type: 'send_data', data: {action: 'buttonClicked'} }, '*')
-    }
+      document.getElementById('myButton').addEventListener('click', function() {
+          sendMessageToBot();
+      });
+      function buttonClicked() {
+        window.Telegram.WebApp.postMessage({type: 'send_data', data: {action: 'buttonClicked'} }, '*')
+      }
   </script>
 </body>
 </html>
