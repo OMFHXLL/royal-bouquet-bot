@@ -12,7 +12,7 @@
       document.getElementById('myButton').addEventListener('click', function() {
           sendMessageToBot();
       });
-      function buttonClicked() {
+      function sendMessageToBot() {
         window.Telegram.WebApp.postMessage({type: 'send_data', data: {action: 'buttonClicked'} }, '*')
       }
   </script>
